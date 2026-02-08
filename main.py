@@ -5,6 +5,7 @@ from fastapi import FastAPI
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
+from starlette.middleware.cors import CORSMiddleware
 from snowflake_db import snowflake_table
 
 load_dotenv()
@@ -112,4 +113,5 @@ DATABASE:
     print("✅ File saved as recipe_frontend_output.json")
 
     return final_output
+
 
