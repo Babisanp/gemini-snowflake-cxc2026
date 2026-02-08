@@ -77,8 +77,7 @@ DATABASE:
 
     print(clean_list)
 
-    with open("recipes.json", "r") as f:
-        recipe_database = json.load(f)
+    recipe_database = json.loads(data_json)
 
     final_output = []
 
@@ -93,6 +92,7 @@ DATABASE:
                 }
                 final_output.append(selected_data)
                 break
+
 
     with open("recipe_frontend_output.json", "w") as f:
         json.dump(final_output, f, indent=4)
