@@ -14,6 +14,10 @@ app = FastAPI()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 client = genai.Client(api_key=GEMINI_API_KEY)
 
+@app.get("/")
+def read_root():
+    return {"message": "FastAPI is running!"}
+
 
 @app.post("/recipes")
 def run_recipe_engine(payload: dict):
